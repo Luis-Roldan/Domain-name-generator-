@@ -41,7 +41,7 @@ window.onload = function() {
   let pronoun = ["the", "our"];
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
-  function generateDomain(parts, currentIndex, currentDomain) {
+  function domainNameGenerator(parts, currentIndex, currentDomain) {
     if (currentIndex === parts.length) {
       // Base case: If currentIndex reaches the length of parts, we have a complete domain.
       console.log(currentDomain);
@@ -49,10 +49,10 @@ window.onload = function() {
     }
     for (let i = 0; i < parts[currentIndex].length; i++) {
       const nextPart = parts[currentIndex][i];
-      generateDomain(parts, currentIndex + 1, currentDomain + nextPart);
+      domainNameGenerator(parts, currentIndex + 1, currentDomain + nextPart);
     }
   }
-  generateDomain([pronoun, adj, noun, [".com"]], 0, "");
+  domainNameGenerator([pronoun, adj, noun, [".com"]], 0, "");
 
   // option 3, with additional ending .net
 
